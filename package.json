@@ -1,0 +1,14 @@
+{
+  "name": "zplat",
+  "version": "0.0.1",
+  "scripts": {
+    "start": "./bin/cmd.js"
+  },
+  "dependencies": {
+    "minimist": "^1.2.5",
+    "pngjs": "^5.0.0",
+    "zpl-image": "^0.1.2"
+  },
+  "devDependencies": {},
+  "license": "AGPL-3.0"
+}
