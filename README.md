@@ -1,7 +1,7 @@
 
 Uses the [zpl-image](https://www.npmjs.com/package/zpl-image) library to convert a PNG image to ZPL which can be sent directly to any ZPL-supporting Zebra label printer.
 
-This just works, is written in pure javascript and requires no drivers.
+This just works, is written in pure javascript, and requires no drivers.
 
 # Setup
 

@@ -57,18 +57,20 @@ function makeZPL(data, width, filename, rotation, monochromeThreshold) {
     black: monochromeThreshold,
     rotate: rotation
   });
-  
-	var zpl = '';
-  zpl += '^XA\n';
+
+  // ZPL command reference:
+  // https://www.citizen-systems.com/resource/support/Label/Generic_Printer_Files/Docs_Command_Reference/Citizen_ZPL_Command_Ref.pdf
+  var zpl = '';
+  zpl += '^XA\n'; // begin label
   zpl += '^PR2,2,2\n'; // print speed https://support.zebra.com/cpws/docs/zpl/PR_Command.pdf
-  zpl += '~SD30\n';
+  zpl += '~SD30\n'; // set darkness https://support.zebra.com/cpws/docs/zpl/MD_SDCommand.pdf
   
   // This is just a comment
   zpl += '^FX ' + filename + ' (' + res.width + 'x' + res.height + 'px, ' +
 		rotation + '-Rotate, ' + monochromeThreshold + '% Black)^FS\n';
 
   zpl += '^GFA,' + res.length + ',' + res.length + ',' + res.rowlen + ',' + res.z64 + '\n';
-  zpl += "^XZ";
+  zpl += "^XZ"; // end label
   return zpl;
 }
 
